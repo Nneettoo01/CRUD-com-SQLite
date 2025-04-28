@@ -1,0 +1,25 @@
+{
+  "name": "crud-com-sqlite",
+  "version": "1.0.0",
+  "description": "Uso do CRUD com SQLite",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nneettoo01/CRUD-com-SQLite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nneettoo01/CRUD-com-SQLite/issues"
+  },
+  "homepage": "https://github.com/Nneettoo01/CRUD-com-SQLite#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
