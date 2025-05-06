@@ -7,7 +7,7 @@ import {
   oneUser,
 } from "../controllers/userControllers.js";
 import { validate } from "../middleware/validate.js";
-import { createUserSchema } from "../schemas/userSchemas.js";
+import { createUserSchema, updatedUserSchema } from "../schemas/userSchemas.js";
 
 const router = express.Router();
 
@@ -15,7 +15,7 @@ router.get("/", getAllUsers);
 
 router.post("/", validate(createUserSchema), createUser);
 
-router.put("/:id", updateUser);
+router.put("/:id", validate(updatedUserSchema), updateUser);
 
 router.delete("/:id", deleteUser);
 
