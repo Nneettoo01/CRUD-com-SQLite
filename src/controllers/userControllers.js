@@ -15,7 +15,7 @@ export const getAllUsers = async (req, res) => {
 };
 
 export const createUser = async (req, res) => {
-  const { name, email } = req.body;
+  const { name, email, password } = req.body;
 
   try {
     //tento fazer algo aqui
@@ -23,6 +23,7 @@ export const createUser = async (req, res) => {
       data: {
         name,
         email,
+        password,
       },
     });
     res.status(201).json(newUser);
@@ -37,12 +38,12 @@ export const createUser = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   const id = req.params.id;
-  const { name, email } = req.body;
+  const { name, email, password } = req.body;
 
   try {
     const updatedUser = await prisma.user.update({
       where: { id: parseInt(id) },
-      data: { name, email },
+      data: { name, email, password },
     });
     res.status(200).json(updatedUser);
   } catch (error) {
@@ -59,7 +60,7 @@ export const deleteUser = async (req, res) => {
     await prisma.user.delete({
       where: { id: Number(id) },
     });
-    res.status(204).send();
+    res.status(200).json(["Usuário excluido com sucesso"]);
   } catch (error) {
     res.status(400).json({
       mensagem: "Erro ao deletar usuário",
