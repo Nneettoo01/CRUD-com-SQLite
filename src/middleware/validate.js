@@ -7,7 +7,6 @@
 //   //2. Modificar a resposta:
 //   //-> Dar uma resposta ao cliente.
 //   //3. Chamar o next() para passar para o proximo middleware(agente) ou encerrar com um res.send().
-// }
 
 export function validate(schema) {
   return (req, res, next) => {
