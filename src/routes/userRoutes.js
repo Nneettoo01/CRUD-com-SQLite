@@ -6,9 +6,14 @@ import {
   updateUser,
   oneUser,
   registerUser,
+  login,
 } from "../controllers/userControllers.js";
 import { validate } from "../middleware/validate.js";
-import { createUserSchema, updatedUserSchema } from "../schemas/userSchemas.js";
+import {
+  createUserSchema,
+  loginSchema,
+  updatedUserSchema,
+} from "../schemas/userSchemas.js";
 
 const router = express.Router();
 
@@ -18,5 +23,6 @@ router.put("/:id", validate(updatedUserSchema), updateUser);
 router.delete("/:id", deleteUser);
 router.get("/:id", oneUser);
 router.post("/register", registerUser);
+router.post("/login", validate(loginSchema), login);
 
 export default router;
