@@ -17,3 +17,6 @@ export function generateToken(user) {
     expiresIn: "1h",
   });
 }
+export function verifyToken(token) {
+  return jwt.verify(token, JWT_SECRET);
+}
