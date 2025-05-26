@@ -18,3 +18,8 @@ export const updatedUserSchema = z.object({
     .regex(/[A-Z]/, "A senha deve conter pelo menos uma letra maíscula")
     .optional(),
 });
+
+export const loginSchema = z.object({
+  email: z.string().email("Email inválido"),
+  password: z.string().min(1, "Senha obrigatória"),
+});
