@@ -4,7 +4,8 @@
 'npm init -y' 
 
 3. instalou pacotes:
- - npm install express sqlite3
+ - npm install sqlite3
+ - npm install express
  - npx prisma init
  - npm install zod
  - npm install jsonwebtoken
